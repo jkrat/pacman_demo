@@ -1,0 +1,36 @@
+
+body {
+    background-color: black;
+    margin: 0px;
+}
+
+div.row {
+    height: 20px;
+}
+
+.row div {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.brick {
+    background-color: blue;
+    
+}
+div.coin {
+    background: url('images/mariocoin.gif');
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+div#pacman {
+    background: url('images/pacman.webp');
+    background-repeat: no-repeat; 
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
