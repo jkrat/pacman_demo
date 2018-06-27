@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="world"></div>
-    <div id="pacman"></div>
+    <div id="pacman" class="right"></div>
     <div id="ghost1"></div>
     <div id="ghost2"></div>
     <div id="ghost3"></div>
@@ -58,12 +58,8 @@
         x: 22, 
         y: 1
     };
-    // var lastLocation = {};
-    // var lastLocationValue;
-    // var nextLocatoinValue = 1;
-    // var start = true;
-    var direction;
 
+    var direction;
 
     function displayWorld() {
         var output = '';
@@ -127,8 +123,7 @@
                 g.y--;}
             }
             displayWorld();
-            displayGhost();
-        
+            displayGhost();      
         }
     }
 
@@ -142,12 +137,16 @@
     document.onkeydown = function(e) {
         if (e.keyCode === 40 && world[pacman.y + 1][pacman.x] !== 2) {
             pacman.y++;
+            document.getElementById("pacman").className = "down";
         } else if (e.keyCode === 37 && world[pacman.y][pacman.x - 1] !== 2) {
             pacman.x--;
+            document.getElementById("pacman").className = "left";
         } else if (e.keyCode === 39 && world[pacman.y][pacman.x + 1] !== 2)  {
             pacman.x++;
+            document.getElementById("pacman").className = "right";
         } else if (e.keyCode === 38 && world[pacman.y - 1][pacman.x] !== 2)  {
             pacman.y--;
+            document.getElementById("pacman").className = "up";
         } else if (e.keyCode === 32) {
             moveGhost(ghost1);
             moveGhost(ghost2);
@@ -157,7 +156,6 @@
             world[pacman.y][pacman.x] = 3;
             score += 10;
         }
-        // console.log(start, lastLocation, lastLocationValue, nextLocatoinValue); 
         displayWorld();
         displayScore();
         displayWorld();

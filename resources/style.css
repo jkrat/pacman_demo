@@ -39,6 +39,7 @@ div.coin {
     background: url('images/mariocoin.gif');
     background-repeat: no-repeat; 
     background-position: center;
+    background-size: cover;
 }
 div#pacman {
     background: url('images/pacman.webp');
@@ -58,3 +59,16 @@ div#ghost1, div#ghost2, div#ghost3 {
     height: 20px;
     position: absolute;
 }
+.up {
+    transform: rotate(-90deg);
+}
+.left {
+    transform: rotate(180deg);
+}
+.down {
+    transform: rotate(90deg);
+}
+.right {
+    transform: rotate(0deg);
+}
+
